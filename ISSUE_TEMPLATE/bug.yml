@@ -1,0 +1,25 @@
+name: Bug
+description: Something is broken
+type: Bug
+body:
+  - type: dropdown
+    id: app
+    attributes:
+      label: App
+      options: [People, Attendance, Payroll, Recruit, Visitor, CRM, Forms, ERP, Platform, Website, Device agent]
+    validations: { required: true }
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options: ["P0 - production down / data wrong", "P1 - major feature broken", "P2 - workaround exists", "P3 - minor"]
+    validations: { required: true }
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce, expected vs actual
+    validations: { required: true }
+  - type: input
+    id: tenant
+    attributes:
+      label: Tenant / client code (if specific)

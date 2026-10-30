@@ -1,0 +1,24 @@
+name: Enterprise client request
+description: Customisation requested by an Enterprise client
+type: Task
+body:
+  - type: input
+    id: client
+    attributes:
+      label: Client code (e.g. acme-plant). Not the company name.
+    validations: { required: true }
+  - type: dropdown
+    id: level
+    attributes:
+      label: Extension level (see handbook/architecture/extensibility.md)
+      options: ["L1 Config", "L2 Integration", "L3 Extension code", "L4 Product feature", "Not classified yet"]
+    validations: { required: true }
+  - type: textarea
+    id: request
+    attributes:
+      label: What the client needs and why
+    validations: { required: true }
+  - type: textarea
+    id: generic
+    attributes:
+      label: Could other clients need this? (if yes → L4, build it into the product)
